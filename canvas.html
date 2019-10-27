@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Fractal</title>
+        <meta charset='utf-8' />
+	</head>
+	<body>
+
+		<input class="fractal" value="Фрактал" onclick="drawFractal()" type="button">
+		<div>
+			Итерация:<input disabled id="iterationsCounter" >
+		<div>
+		<canvas height='320' width='480' id='fractal'></canvas>
+		<script>
+			function drawRect(ctx, xx, yy) {
+				return ctx.fillRect(xx, yy, 2, 2)
+			}
+			function drawFractal () {
+				const fractalArea = document.getElementById("fractal");
+				const ctx = fractal.getContext('2d');
+				ctx.fillStyle = "green";
+				const iterationsCounter = document.getElementById('iterationsCounter');
+
+				const x_max = fractalArea.width;
+				const y_max = fractalArea.height;
+				const e = 50;
+				const iterations = 10000;
+
+				const triangle = [
+					[e, (y_max - e)], // нижняя левая
+					[(x_max / 2), e], // вершина
+					[(x_max - e), (y_max - e)], // нижняя правая
+				];
+
+				for (let value of Object.values(triangle)) {
+					drawRect(ctx, value[0], value[1]);
+				}
+
+				// начальная точка
+				let xx = triangle[1][0];
+				let yy = triangle[1][1] - e;
+
+				for (let i = 0; i < iterations; i++) {
+					setTimeout(() => {
+							let dir = parseInt(Math.random() * 3);
+							xx = parseInt((xx + triangle[dir][0]) / 2);
+							yy = parseInt((yy + triangle[dir][1]) / 2);
+							drawRect(ctx, xx, yy);
+							iterationsCounter.value = i + 1;
+						}, 
+						(10 * i)
+					);
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,95 @@
+body {
+	display: grid;
+	grid-template-areas: 
+		"header header header"
+		"nav article ads"
+		"footer footer footer";
+	grid-template-rows: 60px 1fr 60px;
+	grid-template-columns: 20% 1fr 15%;
+	grid-gap: 10px;
+	height: 100vh;
+	margin: 0;
+}
+#pageHeader {
+	grid-area: header;
+}
+#pageFooter {
+	grid-area: footer;
+}
+#mainArticle {
+	grid-area: article;
+}
+#mainNav {
+	grid-area: nav;
+}
+#siteAds {
+	grid-area: ads;
+}
+
+header, footer, article, nav, div {
+	padding: 20px;
+	background: gold;
+}
+#pageHeader > div {
+	font-family: arial;
+	font-weight: bold;
+	text-shadow: 4px 4px 5px green;
+	text-align: center;
+	color: red;
+	font-size: 30px;
+	padding: 0;
+	background: none;	
+	position: relative;
+}
+#pageFooter > div {
+	font-family: arial;
+	font-weight: bold;
+	font-style: italic;
+	text-align: center;
+	color: blue;
+	font-size: 20px;
+	padding: 0px 0px 0px 20px;
+}
+
+#mainArticle > p {
+	font-family: arial;
+	font-weight: bold;
+	font-style: oblique;
+	color: green;
+	font-size: 25px;
+	position: relative;
+	text-align: center;
+}
+
+#mainNav > p {
+	font-family: arial;
+	font-weight: bold;
+	color: coral;
+	font-size: 18px;
+	position: relative;
+	text-align: center;
+}
+
+#result {
+	font-family: arial;
+	font-weight: bold;
+	font-style: normal;
+	color: purple;
+	font-size: 16px;
+	position: relative;
+	text-align: center;
+}
+#siteAds > p {
+	font-family: arial;
+	font-weight: bold;
+	color: coral;
+	font-size: 18px;
+	text-align: center;
+}
+
+a {
+	font-family: arial;
+	font-weight: bold;
+	color: gray;
+	font-size: 16px;
+}

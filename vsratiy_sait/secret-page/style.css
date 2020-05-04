@@ -1,0 +1,14 @@
+body {
+	background: gold;
+}
+h1 {
+	font-family: arial;
+	font-weight: bold;
+	text-shadow: 4px 4px 5px red;
+	text-align: center;
+	color: blue;
+	font-size: 30px;
+	padding: 0;
+	background: none;	
+	position: relative;
+}
